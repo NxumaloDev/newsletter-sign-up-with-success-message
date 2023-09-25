@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    background: var(--Dark-Slate-Grey);
+}
+
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+    --gradient: linear-gradient(#ff5969, #ff644a);
+}
+
+button {
+    background: var(--Dark-Slate-Grey);
+    color: var(--White);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: 1px solid var(--Grey);
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover,
+button:focus-within {
+    background: var(--gradient);
+    outline: none;
+    box-shadow: 10px 10px 20px var(--Tomato);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    background: var(--White);
+    display: grid;
+    width: 100%;
+    color: var(--Dark-Slate-Grey);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.image-container picture img {
+    width: 100%;
+}
+
+.text-container {
+    padding: 1rem;
+}
+
+.sign-up-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.sign-up-form h1 {
+    font-size: 2.5rem;
+}
+
+.list {
+    position: relative;
+}
+
+.list p::before {
+    content: url('./assets/images/icon-list.svg');
+    position: absolute;
+    left: 0;
+}
+
+.list p {
+    margin-left: 2rem;
+}
+
+.sign-up-form h2 {
+    font-size: 1rem;
+}
+
+.flex p {
+    color: var(--Tomato);
+    display: none;
+}
+
+.sign-up-form input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--Grey);
+    border-radius: 10px;
+    width: calc(100% - 2rem);
+    font-size: 1rem;
+}
+
+.sign-up-form input[type='email']:focus,
+.sign-up-form input[type='email']:focus-visible {
+    border: 1px solid var(--Dark-Slate-Grey);
+    outline: none;
+}
+
+.success-message {
+    display: none;
+}
+
+.text {
+    margin-block: 10rem;
+}
+
+@media screen and (min-width: 375px) {
+    main {
+        width: 70%;
+        padding: 1rem;
+        border-radius: 10px;
+        gap: 2rem;
+        top: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text-container {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        padding: 2rem;
+    }
+}
+
+
